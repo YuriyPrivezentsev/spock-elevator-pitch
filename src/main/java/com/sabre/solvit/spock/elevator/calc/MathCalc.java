@@ -2,7 +2,6 @@ package com.sabre.solvit.spock.elevator.calc;
 
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.function.Predicate;
 
 class MathCalc {
     Double sum(Double ... operands){
