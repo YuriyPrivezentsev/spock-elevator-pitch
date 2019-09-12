@@ -2,7 +2,8 @@ package com.sabre.solvit.spock.elevator.calc;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MathCalcTest {
 
@@ -24,6 +25,12 @@ class MathCalcTest {
     void testSumNullOnly(){
         Double sum = calculator.sum(null, null);
         assertEquals(0., sum.doubleValue());
+    }
+
+    @Test
+    void testSumNullArray(){
+        //noinspection ConfusingArgumentToVarargsMethod
+        assertThrows(IllegalArgumentException.class, () -> calculator.sum(null));
     }
 
     @Test

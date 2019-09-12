@@ -5,6 +5,9 @@ import java.util.Objects;
 
 class MathCalc {
     Double sum(Double ... operands){
+        if(operands == null){
+            throw new IllegalArgumentException("Sum cannot be called on null elements");
+        }
         return Arrays.stream(operands).filter(Objects::nonNull).mapToDouble(item -> item).sum();
     }
 
