@@ -34,6 +34,24 @@ class MathCalcTest {
     }
 
     @Test
+    void testMultiply() {
+        Double multiply = calculator.multiply(2.5, 3.,10.);
+        assertEquals(75., multiply.doubleValue());
+    }
+
+    @Test
+    void testMultiplyWithNull(){
+        Double multiply = calculator.multiply(null, 3.);
+        assertEquals(0., multiply.doubleValue());
+    }
+
+    @Test
+    void testMultiplyNullArray(){
+        //noinspection ConfusingArgumentToVarargsMethod
+        assertThrows(IllegalArgumentException.class, () -> calculator.sum(null));
+    }
+
+    @Test
     void testDivision(){
         Double fraction = calculator.divide(6., 2.);
         assertEquals(3., fraction.doubleValue());
