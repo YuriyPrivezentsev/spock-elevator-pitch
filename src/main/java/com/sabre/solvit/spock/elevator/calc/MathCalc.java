@@ -27,4 +27,11 @@ class MathCalc {
         return numerator/denominator;
     }
 
+    Double subtract(Double minuend, Double subtrahend){
+        if(minuend == null || subtrahend == null){
+            throw new IllegalArgumentException("Invalid subtraction operands");
+        }
+        return minuend - subtrahend;
+    }
+
 }

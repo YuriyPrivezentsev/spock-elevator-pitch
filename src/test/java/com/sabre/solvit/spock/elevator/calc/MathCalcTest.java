@@ -72,4 +72,14 @@ class MathCalcTest {
         assertThrows(IllegalArgumentException.class, () -> calculator.divide(null, 3.));
     }
 
+    @Test
+    void testSubtraction(){
+        Double difference = calculator.subtract(6., 2.);
+        assertEquals(4., difference.doubleValue());
+    }
+
+    @Test
+    void testInvalidSubtractionArgumentsException(){
+        assertThrows(IllegalArgumentException.class, () -> calculator.subtract(6., null));
+    }
 }
